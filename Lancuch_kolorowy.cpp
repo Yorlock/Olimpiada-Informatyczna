@@ -35,10 +35,10 @@ int main() {
     }
 
     ile_niezgodnosci = m;
-    for(int i = 0; i < d; i++)
+    for(int i = 0; i < d; i++) // sprawdz, czy pierwsze d elementów tworzą ładny fragment
         licz_zgodnosc(lancuch[i], 1);
     if(ile_niezgodnosci == 0) wynik++;
-    for(int i = 0; i + d < n; i++) {
+    for(int i = 0; i + d < n; i++) { // sprawdzaj kolejne kombinacje, czy tworzą ładny fragment usuwając najstarszy i dodając najnowszy łańcuch
         licz_zgodnosc(lancuch[i], -1);
         licz_zgodnosc(lancuch[i + d], 1);
         if(ile_niezgodnosci == 0) wynik++;
